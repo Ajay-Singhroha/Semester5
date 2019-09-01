@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q8</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q8</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1>Number Methods</h1>
+                <button type="submit" class="btn btn-success" onclick="generate()">Enter Number</button><br><br>
+                <input id="showNum" type="text" class="form-control" disabled>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-success" onclick="numberMethods(this)"
+                            id="toExponential">toExponential()</button><br><br>
+                        <button type="submit" class="btn btn-warning" onclick="numberMethods(this)"
+                            id="toFixed">toFixed()</button><br><br>
+                        <button type="submit" class="btn btn-info" onclick="numberMethods(this)"
+                            id="toPrecision">toPrecision()</button><br><br>
+                        <button type="submit" class="btn btn-dark" onclick="numberMethods(this)"
+                            id="valueOf">valueOf()</button><br><br>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-light" onclick="numberMethods(this)"
+                            id="Number">Number()</button><br><br>
+                        <button type="submit" class="btn btn-primary" onclick="numberMethods(this)"
+                            id="parseInt">parseInt()</button><br><br>
+                        <button type="submit" class="btn btn-secondary" onclick="numberMethods(this)"
+                            id="parseFloat">parseFloat()</button><br><br>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var number;
+        function generate() {
+            number = Number((prompt("Enter number :: ")));
+            document.getElementById("showNum").value = (" Number is : " + number.toString());
+        }
+        function numberMethods(element) {
+            if (number != null) {
+                switch (element.id) {
+                    case "toExponential": document.getElementById("showNum").value = ("In Exp Form : " + number.toExponential(2));
+                        break;
+                    case "toFixed": document.getElementById("showNum").value = ("Fixed Form : " + number.toFixed(4));
+                        break;
+                    case "toPrecision": document.getElementById("showNum").value = ("Precised Form : " + number.toPrecision(6));
+                        break;
+                    case "valueOf": document.getElementById("showNum").value = ("Value of : " + number.valueOf());
+                        break;
+                    case "Number": document.getElementById("showNum").value = ("Number : " + Number(number));
+                        break;
+                    case "parseInt": document.getElementById("showNum").value = ("Parsed Integer : " + parseInt(number));
+                        break;
+                    case "parseFloat": document.getElementById("showNum").value = ("Parsed FLoat : " + parseFloat(number));
+                        break;
+                   
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

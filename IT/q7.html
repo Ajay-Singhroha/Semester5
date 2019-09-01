@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q7</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q7</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1>String Methods</h1>
+                <button type="submit" class="btn btn-success" onclick="generate()">Enter String</button><br><br>
+                <input id="showString" type="text" class="form-control" disabled>
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-success" onclick="stringMethods(this)"
+                            id="indexOf">indexOf()</button><br><br>
+                        <button type="submit" class="btn btn-warning" onclick="stringMethods(this)"
+                            id="lastIndexOf">lastIndexOf()</button><br><br>
+                        <button type="submit" class="btn btn-info" onclick="stringMethods(this)"
+                            id="search">search()</button><br><br>
+                        <button type="submit" class="btn btn-dark" onclick="stringMethods(this)"
+                            id="slice">slice()</button><br><br>
+                        <button type="submit" class="btn btn-warning" onclick="stringMethods(this)"
+                            id="split">split()</button><br><br>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-light" onclick="stringMethods(this)"
+                            id="substring">substring()</button><br><br>
+                        <button type="submit" class="btn btn-primary" onclick="stringMethods(this)"
+                            id="substr">substr()</button><br><br>
+                        <button type="submit" class="btn btn-secondary" onclick="stringMethods(this)"
+                            id="replace">replace()</button><br><br>
+                        <button type="submit" class="btn btn-success" onclick="stringMethods(this)"
+                            id="match">match()</button><br><br>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-light" onclick="stringMethods(this)"
+                            id="upper">toUpperCase()</button><br><br>
+                        <button type="submit" class="btn btn-primary" onclick="stringMethods(this)"
+                            id="lower">toLowerCase()</button><br><br>
+                        <button type="submit" class="btn btn-secondary" onclick="stringMethods(this)"
+                            id="concat">concat()</button><br><br>
+                        <button type="submit" class="btn btn-success" onclick="stringMethods(this)"
+                            id="charat">charAt()</button><br><br>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var str;
+        function generate() {
+            str = prompt("Enter string :: ");
+            document.getElementById("showString").value = (" String is : " + str);
+        }
+        function stringMethods(element) {
+            if (str != null) {
+                switch (element.id) {
+                    case "indexOf": document.getElementById("showString").value = (" Index of a is : " + str.indexOf('a'));
+                        break;
+                    case "lastIndexOf": document.getElementById("showString").value = ("Last Index of a is : " + str.lastIndexOf('a'));
+                        break;
+                    case "search": document.getElementById("showString").value = ("Searched for a : " + str.search('a'));
+                        break;
+                    case "slice": document.getElementById("showString").value = ("Sliced String is : " + str.slice(0, 3));
+                        break;
+                    case "split": document.getElementById("showString").value = ("Split on a : " + str.split("a"));
+                        break;
+                    case "substring": document.getElementById("showString").value = ("Substring is : " + str.substring(0, 4));
+                        break;
+                    case "substr": document.getElementById("showString").value = ("Substr : " + str.substr(1, 3));
+                        break;
+                    case "replace": document.getElementById("showString").value = ("Replaced a  : " + str.replace('a', "I'm replaced"));
+                        break;
+                    case "match": document.getElementById("showString").value = (" Match : " + str.match('/abcd/gi'));
+                        break;
+                    case "upper": document.getElementById("showString").value = (" Capital String : " + str.toUpperCase());
+                        break;
+                    case "lower": document.getElementById("showString").value = (" LowerCase : " + str.toLowerCase());
+                        break;
+                    case "concat": document.getElementById("showString").value = (" Concatenation : " + str.concat("  I'm concatenated one"));
+                        break;
+                    case "charat": document.getElementById("showString").value = ("Char at 2nd Pos. is : " + str.charAt(1));
+                        break;
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

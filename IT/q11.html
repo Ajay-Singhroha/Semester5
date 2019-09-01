@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q11</title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .images {
+            width: 450px;
+            height: 300px;
+        }
+
+        .left {
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+
+        .right {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q11</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h4>Image Slider</h4><br>
+                <div class="slider">
+                    <img class="images"
+                        src="https://cdn.lolwot.com/wp-content/uploads/2015/04/10-amazing-natural-sceneries-from-around-the-world-2.jpg">
+                    <img class="images"
+                        src="https://previews.123rf.com/images/bbtreesubmission/bbtreesubmission1702/bbtreesubmission170202709/72443821-sceneries-of-a-countryside-illustration.jpg">
+                    <img class="images"
+                        src="https://cdn.lolwot.com/wp-content/uploads/2015/04/10-amazing-natural-sceneries-from-around-the-world-1.jpg">
+                    <img class="images" src="https://www.holidify.com/blog/wp-content/uploads/2014/08/mandovi.jpg">
+                    <img class="images"
+                        src="https://www.cleartrip.com/collections/wp-content/uploads/2017/07/Coorg.jpg">
+
+                    <button class="left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("images");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>

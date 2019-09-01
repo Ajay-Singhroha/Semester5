@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q10</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q10</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row">
+            <div class="col-4">
+                <h2> MAJOR DISHES </h2>
+                <select class="well" id="major" multiple onchange="order()">
+                    <option value="80">MC-ALOO -> 80</option>
+                    <option value="90">FRENCH FRIES -> 90</option>
+                    <option value="80">CHICKEN PASTA -> 180</option>
+                    <option value="80">VEG BURGER -> 80</option>
+
+                </select>
+            </div>
+            <div class="col-4">
+                <h2> STARTERS </h2>
+                <select class="well" id="starter" multiple onchange="order()">
+                    <option value="60">FRENCH FRIES -> 60</option>
+                    <option value="50">WAFFLES -> 50</option>
+                    <option value="70">SPRING ROLL -> 70</option>
+
+                </select>
+            </div>
+            <div class="col-4">
+                <h2> MICSELLANEOUS </h2>
+                <select class="well well-sm" id="misc" multiple onclick="order()">
+                    <option value="50">MILK SHAKE -> 50</option>
+                    <option value="50">CHOCOLATE SHAKE -> 50</option>
+                    <option value="70">BUTTER SCOTCH-> 70</option>
+
+                </select>
+            </div>
+            <div class="col-12 mt-5">
+                <form>
+                    <textarea id="items" class="form-control" rows="8" cols='15' style="width: 70%"
+                        disabled></textarea><br>
+                    <h5 id="bill"></h5>
+                    <button type="button" class="btn btn-success" onclick="calculate()">Order</button>
+                    <input type="button" class="btn btn-warning"  onclick="empty()" value="Clear">
+
+                    <form>
+            </div>
+
+        </div>
+
+        <h5></h5>
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function calculate() {
+
+            document.getElementById('bill').innerHTML = "Your Bill is <strong>" + bill + "</strong>";
+        }
+        function order() {
+            bill = 0;
+            content = "";
+            var items = document.getElementById('major');
+            for (i = 0; i < items.length; i++) {
+                v = items[i];
+                if (v.selected) {
+                    content += v.innerHTML + "\n";
+                    bill += parseInt(v.value);
+                }
+            }
+            items = document.getElementById('starter');
+            for (i = 0; i < items.length; i++) {
+                v = items[i];
+                if (v.selected) {
+                    content += v.innerHTML + "\n";
+                    bill += parseInt(v.value);
+
+                }
+            }
+            items = document.getElementById('misc');
+            for (i = 0; i < items.length; i++) {
+                v = items[i];
+                if (v.selected) {
+                    content += v.innerHTML + "\n";
+                    bill += parseInt(v.value);
+
+                }
+            }
+            content += "\n" + "Total=" + bill;
+            document.getElementById("items").innerHTML = content;
+        }
+        function empty(){
+            document.getElementById("items").innerHTML="";
+            document.getElementById('bill').innerHTML="";
+        }
+
+    </script>
+</body>
+
+</html>

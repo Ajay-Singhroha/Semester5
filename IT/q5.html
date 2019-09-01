@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q5</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q5</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1>Square and Double</h1>
+                <br>
+                <span>Value : <input type="number" class="form-control form-control-sm" id="input1"
+                        onchange="calculate(this)" onfocus="calculate(this)" onblur="calculate(this)"></span>
+                <br>
+                <p>Action:</p>
+                <input type="radio" name="radio" id="double" onclick="calculate(this)"> Double
+                <br>
+                <input type="radio" name="radio" id="square" onclick="calculate(this)"> Square
+                <br><br>
+                <span>Result: <input type="number" class="form-control form-control-sm" id="input2"
+                        onchange="calculate(this)" onfocus="calculate(this)" onblur="calculate(this)"></span>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function calculate(element) {
+            square = document.getElementById("square");
+            double = document.getElementById("double");
+            input = document.getElementById("input1");
+            result = document.getElementById("input2");
+            if (element == input) {
+                if (square.checked == true) {
+                    result.value = element.value * element.value;
+                }
+                if (double.checked == true) {
+                    result.value = element.value * 2;
+                }
+                previousInput = element
+
+            }
+            if (element == result) {
+                if (square.checked == true) {
+                    input.value = Math.sqrt(element.value);
+                }
+                if (double.checked == true) {
+                    input.value = element.value / 2;
+                }
+                previousInput = element
+
+            }
+            if (element == double) {
+                if (previousInput == input) {
+                    result.value = input.value * 2;
+                }
+                else {
+                    input.value = (result.value / 2);
+                }
+
+            }
+            if (element == square) {
+                if (previousInput == input) {
+                    result.value = input.value * input.value;
+                }
+                else {
+                    input.value = Math.sqrt(result.value);
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

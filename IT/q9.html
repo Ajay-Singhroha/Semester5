@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q9</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q9</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1>Date Methods</h1>
+                <textarea id="showDate" type="text" class="form-control" disabled></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-success" onclick="dateMethods(this)" id="getMethods">Get
+                            Methods()</button><br><br>
+
+                    </div>
+                    <div class="col-6">
+
+                        <button type="submit" class="btn btn-secondary" onclick="dateMethods(this)" id="setMethods">Set
+                            Methods()</button><br><br>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var number;
+        function generate() {
+            number = Number((prompt("Enter number :: ")));
+            document.getElementById("showDate").value = (" Number is : " + number.toString());
+        }
+        function dateMethods(element) {
+            d = new Date();
+
+            switch (element.id) {
+                case "getMethods": content = "";
+                    content += d.getDate() + "\n";
+                    content += d.getDay() + "\n";
+                    content += d.getFullYear() + "\n";
+                    content += d.getHours() + "\n";
+                    content += d.getMilliseconds() + "\n";
+                    content += d.getMinutes() + "\n";
+                    content += d.getMonth() + "\n";
+                    content += d.getSeconds() + "\n";
+                    content += d.getTime() + "\n";
+                    document.getElementById("showDate").value = ("Result : " + content);
+                    break;
+                case "setMethods": content = "";
+                    content += d.setDate(15) + "\n";
+                    content += d.setFullYear(2025) + "\n";
+                    content += d.setHours(22) + "\n";
+                    content += d.setMilliseconds(525) + "\n";
+                    content += d.setMinutes(45) + "\n";
+                    content += d.setMonth(12) + "\n";
+                    content += d.setSeconds(36) + "\n";
+                    content += d.getTime(42525263636) + "\n";
+                    document.getElementById("showDate").value = ("Result : " + content);
+                    break;
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

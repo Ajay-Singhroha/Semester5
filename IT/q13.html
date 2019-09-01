@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q13</title>
+    <style>
+        .images {
+            width: 250px;
+            height: 250px;
+            left: 0;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q13</a>
+    </nav>
+
+
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12" style="text-align: center">
+                <h2>Scrolling Image</h2>
+
+            </div>
+        </div>
+        <img class="images" id="image" src="https://www.holidify.com/blog/wp-content/uploads/2014/08/mandovi.jpg"><br>
+        <hr color="cyan"><br>
+        <input type="button" value="start" onclick="start()">
+        <input type="button" value="stop" onclick="stop()">
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+        var image = null;
+        displacement = 0;
+        direction = 1;
+        function start() {
+            variable = setInterval(moveRight, 100);
+        }
+
+        function moveRight() {
+            if ((displacement + document.getElementById('image').width >= screen.width || displacement < 0)) {
+                direction *= -1;
+            }
+
+            displacement = displacement + (10 * direction);
+            document.getElementById('image').style.marginLeft = "" + displacement + "px";
+
+        }
+
+        function stop() {
+            clearInterval(variable);
+        }
+    </script>
+</body>
+
+</html>

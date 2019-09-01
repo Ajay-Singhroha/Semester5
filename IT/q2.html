@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Javascript-Q2</title>
+    <style>
+        div {
+            text-align: center;
+        }
+        img{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q2</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+
+        <h5 class="panel panel-default" id="nameHeading">Welcome </h5>
+        <br>
+        <img src="https://www.onholdstudio.co.uk/wp-content/uploads/Hero-Image-Welcome-v2-1.png" alt="welcome image">
+        <button type="button" class="btn btn-info" onclick="submitName()">Enter Name</button>
+
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function submitName() {
+            name = prompt("Please Enter your name :: ");
+            alert(" Greetings " + name + ", Welcome to the page!");
+            container=document.getElementById("nameHeading").innerHTML="Greetings "+name+", Welcome!";
+        }
+
+    </script>
+</body>
+
+</html>

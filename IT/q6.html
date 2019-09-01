@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Javascript-Q6</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+        <a class="navbar-brand " style="color: white;">Javascript-Q6</a>
+    </nav>
+
+
+    <div class="container mx-5 my-5 px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1>Array Methods</h1>
+                <button type="submit" class="btn btn-success" onclick="generate()">Create Array</button><br><br>
+                <input id="showArray" type="text" class="form-control" disabled>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-success" onclick="arrayJoin()">join()</button><br><br>
+                        <button type="submit" class="btn btn-warning" onclick="arrayPush()">push()</button><br><br>
+                        <button type="submit" class="btn btn-info" onclick="arrayPop()">pop()</button><br><br>
+                        <button type="submit" class="btn btn-dark" onclick="arrayShift()">shift()</button><br><br>
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-light" onclick="arrayUnshift()">unshift()</button><br><br>
+                        <button type="submit" class="btn btn-primary" onclick="arraySplice()">splice</button><br><br>
+                        <button type="submit" class="btn btn-secondary"
+                            onclick="arrayConcat()">concat()</button><br><br>
+                        <button type="submit" class="btn btn-success" onclick="arraySlice()">slice()</button><br><br>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var arr;
+        function generate() {
+            arr = ["Apple", "Mango", "Banana", "Pear", "Guvava", "Grapes"];
+            document.getElementById("showArray").value = (" Array is : [ " + arr.toString() + " ] ");
+        }
+        function arrayConcat() {
+            if (arr != null) {
+                var arr2 = ["New", "Array", "Elements"];
+                document.getElementById("showArray").value = ("Concated Array is : [ " + arr.concat(arr2).toString() + " ] ");
+            }
+        }
+        function arrayJoin() {
+            if (arr != null) {
+                document.getElementById("showArray").value = (" Array is : [ " + arr.join(';') + " ] ");
+            }
+        }
+        function arrayPop() {
+            if (arr != null) {
+                document.getElementById("showArray").value = ("Popped Element : [ " + arr.pop() + " ] ");
+            }
+        }
+        function arrayPush() {
+            if (arr != null) {
+                arr.push("New Fruit")
+                document.getElementById("showArray").value = ("Pushed Array is : [ " + arr.toString() + " ] ");
+            }
+        }
+        function arrayShift() {
+            if (arr != null) {
+                arr.shift()
+                document.getElementById("showArray").value = ("Shifted Array is : [ " + arr.toString() + " ] ");
+            }
+        }
+        function arraySlice() {
+            if (arr != null) {
+                document.getElementById("showArray").value = ("Sliced Array is : [ " + arr.slice(2) + " ] ");
+            }
+        }
+        function arraySplice() {
+            if (arr != null) {
+                arr.splice(2,2,"Melon","Orange")
+                document.getElementById("showArray").value = ("Spliced Array is : [ " + arr.toString() + " ] ");
+            }
+        }
+        function arrayUnshift() {
+            if (arr != null) {
+                arr.unshift("Apple")
+                document.getElementById("showArray").value = ("Unshifted Array is : [ " + arr.toString() + " ] ");
+            }
+        }
+    </script>
+</body>
+
+</html>
